@@ -1,3 +1,6 @@
+<head>
+  <link rel="stylesheet" href="adm.css">
+</head>
 <nav class="navbar navbar-default">
     <div class="container-fluid">
       <!-- Brand and toggle get grouped for better mobile display -->
@@ -8,9 +11,10 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="#"><img src="https://place-hold.it/50x30"></a>
+        <a class="navbar-brand" href="index.php" style="float:left;height: 50px;padding: 12px 15px;font-size: 18px;line-height: 20px;"><img src="logo/logo-transparent.png"></a> <!-- Logo -->
       </div>
-      <!-- Collect the nav links, forms, and other content for toggling -->	
+
+      <!-- Menu -->	
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav">
           <li><a href="index.php">Home <span class="sr-only">(current)</span></a></li>
@@ -27,6 +31,7 @@
             </ul>
           </li>
   
+          <!-- Dropdown -->
         <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">TV Audio <span class="caret"></span></a>
             <ul class="dropdown-menu">
@@ -39,7 +44,7 @@
           </li>
         </ul>
   
-  
+  <!-- Pesquisa,Contato,Carrinho -->
         
         <form method="get" action="busca.php" class="navbar-form navbar-left" role="search">
           <div class="form-group">
@@ -47,15 +52,17 @@
           </div>
           <button type="submit" class="btn btn-default">Pesquisar</button>
         </form>
-        <ul class="nav navbar-nav navbar-right">
+        <ul class="nav navbar-nav navbar-right"> 
+        <li>  <a href="carrinho.php"><span class="glyphicon glyphicon-shopping-cart"></span> Carrinho </a> </li>
           <li><a href="#">Contato</a></li>
 
+                                          <!-- Area de LOGIN -->
 <?php
   if (empty($_SESSION['id'])) {
 
 ?>
 
-            <li><a href="login.php" <span class="glyphicon glyphicon-log-in"> </span> Login </a> </li> <!--Login-->
+            <li><a href="login.php" <span class="glyphicon glyphicon-log-in login"> </span> Login </a> </li> <!--Login-->
 
   <?php } else {
     if ($_SESSION['adm']==0) {
@@ -63,14 +70,14 @@
   $exibe_user=$consulta_user->fetch(PDO::FETCH_ASSOC);
   ?>
 
-  <li> <a href="#"><span class="glyphicon glyphicon-user"> </span> <?php echo $exibe_user['nome']; ?> </a></li>                                                                 <!-- login -->
+  <li> <a href="areaUser.php"><span class="glyphicon glyphicon-user"> </span> <?php echo $exibe_user['nome']; ?> </a></li>                                                                 <!-- login -->
 
-<li> <a href="sair.php"><span class="glyphicon glyphicon-off"> </span>Sair</a></li> <!-- logoff -->
+<li> <a href="sair.php"><span class="glyphicon glyphicon-off leave"> </span>Sair</a></li> <!-- logoff -->
 <?php } else { ?>
    
-   <li> <a href="adm.php"> <button class="btn btn-sml btn-danger">Adm</button></a></li>                                                                 <!-- login -->
+   <li > <a href="adm.php"> <button class="btn btn-sml btn-danger adm">Adm</button></a></li>   <!-- botão adm -->                                                              <!-- login -->
 
-   <li> <a href="sair.php"><span class="glyphicon glyphicon-off"></span>Sair</a></li> <!-- logoff -->
+   <li> <a href="sair.php"><span class="glyphicon glyphicon-off leave"></span>Sair</a></li> <!-- logoff adm-->
 <?php } 
 } ?>
 

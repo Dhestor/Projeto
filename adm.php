@@ -31,10 +31,16 @@
 	
 <?php
 	
+	session_start();
+
+    if (empty($_SESSION['adm']) || $_SESSION['adm']!=1) {
+        header('location:index.php');
+    }
+	
 	include 'conexao.php';	
 	include 'menu.php';
-	include 'footer.html';
-
+	include 'cabecalho.html';
+	
 	?>
 	
 	
@@ -44,17 +50,47 @@
 		
 			<div class="col-sm-4 col-sm-offset-4 text-center">
 				
-				<h2>Usuário Cadastrado com sucesso!!</h2>
-				
-				<a href="index.php" class="btn btn-block btn-info" role="button">Entrar na loja</a>
+				<h2>Área administrativa</h2>
 				
 				
-							
+				<a href="formProduto.php">			
+				<button type="submit" class="btn btn-block btn-lg btn-primary">
+					
+					Incluir Produto
+					
+				</button>
+					
+				</a>
+				
+				<a href="lista.php">
+				<button type="submit" class="btn btn-block btn-lg btn-warning">
+					
+					Alterar / Excluir Produto
+					
+				</button>
+</a>
+				
+				<button type="submit" class="btn btn-block btn-lg btn-success">
+					
+					Vendas
+					
+				</button>
+				
+				
+				<a href="sair.php">
+				<button type="submit" class="btn btn-block btn-lg btn-danger">
+					
+					Sair da àrea administrativa
+					
+				</button>
+</a>
+				
+				
+				
 			</div>
 		</div>
 	</div>
 	
-	<?php include 'footer.html' ?>
 	
 	
 	

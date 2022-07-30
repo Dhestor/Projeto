@@ -108,13 +108,12 @@ $(document).ready(function(){
 						<input name="cep" type="text" class="form-control" required id="cep">
 				</div>
 				
-							
+					
 				<button type="submit" class="btn btn-lg btn-default">
 					
 					<span class="glyphicon glyphicon-pencil"> Cadastrar</span>
 					
 				</button>
-				
 				</form>
 							
 			</div>

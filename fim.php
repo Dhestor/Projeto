@@ -33,7 +33,6 @@
 	
 	include 'conexao.php';	
 	include 'menu.php';
-	include 'footer.html';
 
 	?>
 	
@@ -44,9 +43,9 @@
 		
 			<div class="col-sm-4 col-sm-offset-4 text-center">
 				
-				<h2>Usuário Cadastrado com sucesso!!</h2>
+				<h2>Sua compra foi realizada com sucesso!! Seu ticket é <?php echo $ticket ?></h2>
 				
-				<a href="index.php" class="btn btn-block btn-info" role="button">Entrar na loja</a>
+				<a href="index.php" class="btn btn-block btn-info" role="button">Voltar</a>
 				
 				
 							
@@ -54,7 +53,7 @@
 		</div>
 	</div>
 	
-	<?php include 'footer.html' ?>
+
 	
 	
 	

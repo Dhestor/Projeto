@@ -1,0 +1,28 @@
+.adm {
+    padding: 4px 10px 2px 10px;
+    
+    border: 0;
+}
+
+.glyphicon-shopping-cart {
+    color:rgb(35, 91, 35);
+}
+
+.glyphicon {
+    top: 2px;
+    right: 1px;
+}
+
+.glyphicon-off {    
+    top: 2px;
+    left: 45px;
+    color: rgb(145, 65, 108);
+}
+
+.navbar-brand {
+    float: left;
+    height: 50px;
+    padding: 12px 15px;
+    font-size: 18px;
+    line-height: 20px;
+}
